@@ -12,30 +12,41 @@
   * { box-sizing: border-box; }
   body { margin: 0; font-family: 'Barlow', sans-serif; background: oklch(0.98 0.006 75); color: oklch(0.22 0.015 75); }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .navdot { width: 9px; height: 9px; border-radius: 50%; background: oklch(0.98 0.006 75); border: 1.5px solid oklch(0.6 0.15 145); display: block; transition: all 0.2s ease; }
+  .navdot.active { width: 12px; height: 12px; background: oklch(0.6 0.15 145); }
 </style>
 </head>
 <body>
 
   <!-- NAV -->
   <header style="position:sticky; top:0; z-index:50; background:oklch(0.98 0.006 75 / 0.92); backdrop-filter:blur(8px); border-bottom:1px solid oklch(0.88 0.01 75); display:flex; align-items:center; justify-content:space-between; padding:16px 40px;">
-    <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:26px; letter-spacing:0.5px; color:oklch(0.22 0.015 75);">SACARIA <span style="color:oklch(0.6 0.15 45);">BALDO</span></div>
+    <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:26px; letter-spacing:0.5px; color:oklch(0.22 0.015 75);">SACARIA <span style="color:oklch(0.6 0.15 145);">BALDO</span></div>
     <nav style="display:flex; align-items:center; gap:32px;">
       <a href="#produtos" style="color:oklch(0.35 0.015 75); text-decoration:none; font-size:15px; font-weight:600;">Produtos</a>
       <a href="#diferenciais" style="color:oklch(0.35 0.015 75); text-decoration:none; font-size:15px; font-weight:600;">Por que nós</a>
       <a href="#contato" style="color:oklch(0.35 0.015 75); text-decoration:none; font-size:15px; font-weight:600;">Contato</a>
-      <a href="https://wa.me/5551999812392" target="_blank" style="background:oklch(0.6 0.15 45); color:oklch(0.99 0.005 75); text-decoration:none; font-weight:700; font-size:14px; padding:10px 20px; border-radius:4px;">WhatsApp</a>
+      <a href="https://wa.me/5551999812392" target="_blank" style="background:oklch(0.6 0.15 145); color:oklch(0.99 0.005 75); text-decoration:none; font-weight:700; font-size:14px; padding:10px 20px; border-radius:4px;">WhatsApp</a>
     </nav>
   </header>
 
+  <!-- VERTICAL NAV -->
+  <nav style="position:fixed; right:28px; top:50%; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:16px;">
+    <a href="#hero" class="navdot active" data-nav="hero" title="Início"></a>
+    <a href="#produtos" class="navdot" data-nav="produtos" title="Produtos"></a>
+    <a href="#diferenciais" class="navdot" data-nav="diferenciais" title="Por que nós"></a>
+    <a href="#contato" class="navdot" data-nav="contato" title="Contato"></a>
+  </nav>
+
   <!-- HERO -->
-  <section style="position:relative; padding:100px 40px 90px; background:oklch(0.22 0.015 75); color:oklch(0.97 0.006 75); overflow:hidden;">
+  <section id="hero" style="position:relative; padding:100px 40px 90px; background:oklch(0.22 0.015 75); color:oklch(0.97 0.006 75); overflow:hidden;">
     <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;">
       <div style="animation:fadeUp 0.6s ease both;">
-        <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.7 0.13 45); margin-bottom:18px;">Navegantes · Porto Alegre · RS — Atacado e Varejo</div>
+        <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.7 0.13 145); margin-bottom:18px;">Navegantes · Porto Alegre · RS — Atacado e Varejo</div>
         <h1 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:58px; line-height:1.02; margin:0 0 22px; letter-spacing:0.3px;">Embalagens novas e usadas para sua empresa</h1>
         <p style="font-size:19px; line-height:1.55; color:oklch(0.85 0.01 75); max-width:520px; margin:0 0 32px;">Sacos de algodão, Big Bags, tonéis e bombonas — novas ou com nova vida, prontas para reaproveitar. Estoque amplo, preço de atacado, pronta entrega em Porto Alegre e região.</p>
         <div style="display:flex; gap:14px; flex-wrap:wrap;">
-          <a href="https://wa.me/5551999812392" target="_blank" style="background:oklch(0.6 0.15 45); color:oklch(0.99 0.005 75); text-decoration:none; font-weight:700; font-size:16px; padding:15px 28px; border-radius:4px;">Fale pelo WhatsApp</a>
+          <a href="https://wa.me/5551999812392" target="_blank" style="background:oklch(0.6 0.15 145); color:oklch(0.99 0.005 75); text-decoration:none; font-weight:700; font-size:16px; padding:15px 28px; border-radius:4px;">Fale pelo WhatsApp</a>
+          <a href="https://whatsapp.com/channel/0029Vb8zhuRHltYD1mke5R17" target="_blank" style="border:1.5px solid oklch(0.6 0.15 145); color:oklch(0.7 0.13 145); text-decoration:none; font-weight:700; font-size:16px; padding:15px 28px; border-radius:4px;">Entrar no canal do WhatsApp</a>
           <a href="#produtos" style="border:1.5px solid oklch(0.5 0.01 75); color:oklch(0.95 0.005 75); text-decoration:none; font-weight:700; font-size:16px; padding:15px 28px; border-radius:4px;">Ver produtos</a>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:36px;">
@@ -54,7 +65,7 @@
   <!-- PRODUTOS -->
   <section id="produtos" style="padding:90px 40px; max-width:1200px; margin:0 auto;">
     <div style="margin-bottom:48px;">
-      <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.6 0.15 45); margin-bottom:10px;">Nossos produtos</div>
+      <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.6 0.15 145); margin-bottom:10px;">Nossos produtos</div>
       <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:42px; margin:0; letter-spacing:0.3px;">O que temos em estoque</h2>
     </div>
     <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:28px;">
@@ -127,7 +138,7 @@
     </div>
 
     <div style="margin-top:40px; padding-top:40px; border-top:1px solid oklch(0.89 0.008 75);">
-      <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.6 0.15 45); margin-bottom:16px;">Um pouco do nosso estoque</div>
+      <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.6 0.15 145); margin-bottom:16px;">Um pouco do nosso estoque</div>
       <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:10px; margin-bottom:28px;">
         <img src="assets/tecidos-1.jpeg" alt="Tecidos e panos em estoque" style="width:100%; height:110px; object-fit:cover; border-radius:8px; border:1px solid oklch(0.89 0.008 75);">
         <img src="assets/tecidos-4.jpeg" alt="Tecidos e panos em estoque" style="width:100%; height:110px; object-fit:cover; border-radius:8px; border:1px solid oklch(0.89 0.008 75);">
@@ -148,27 +159,27 @@
   <section id="diferenciais" style="padding:90px 40px; background:oklch(0.95 0.01 75);">
     <div style="max-width:1200px; margin:0 auto;">
       <div style="margin-bottom:48px;">
-        <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.6 0.15 45); margin-bottom:10px;">Por que nós</div>
+        <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.6 0.15 145); margin-bottom:10px;">Por que nós</div>
         <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:42px; margin:0; letter-spacing:0.3px;">Por que escolher a Sacaria Baldo</h2>
       </div>
       <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:32px;">
         <div>
-          <div style="width:44px; height:44px; border-radius:10px; background:oklch(0.6 0.15 45); margin-bottom:20px;"></div>
+          <div style="width:44px; height:44px; border-radius:10px; background:oklch(0.6 0.15 145); margin-bottom:20px;"></div>
           <h3 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:23px; margin:0 0 10px;">Estoque amplo</h3>
           <p style="font-size:15.5px; line-height:1.55; color:oklch(0.4 0.012 75); margin:0;">Variedade de produtos pronta entrega para você não perder tempo.</p>
         </div>
         <div>
-          <div style="width:44px; height:44px; border-radius:10px; background:oklch(0.6 0.15 45); margin-bottom:20px;"></div>
+          <div style="width:44px; height:44px; border-radius:10px; background:oklch(0.6 0.15 145); margin-bottom:20px;"></div>
           <h3 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:23px; margin:0 0 10px;">Preço de atacado</h3>
           <p style="font-size:15.5px; line-height:1.55; color:oklch(0.4 0.012 75); margin:0;">Condições especiais para empresas e consumidores finais.</p>
         </div>
         <div>
-          <div style="width:44px; height:44px; border-radius:10px; background:oklch(0.6 0.15 45); margin-bottom:20px;"></div>
+          <div style="width:44px; height:44px; border-radius:10px; background:oklch(0.6 0.15 145); margin-bottom:20px;"></div>
           <h3 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:23px; margin:0 0 10px;">Retirada e entrega</h3>
           <p style="font-size:15.5px; line-height:1.55; color:oklch(0.4 0.012 75); margin:0;">Retire no local ou receba em Porto Alegre e região metropolitana.</p>
         </div>
         <div>
-          <div style="width:44px; height:44px; border-radius:10px; background:oklch(0.6 0.15 45); margin-bottom:20px;"></div>
+          <div style="width:44px; height:44px; border-radius:10px; background:oklch(0.6 0.15 145); margin-bottom:20px;"></div>
           <h3 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:23px; margin:0 0 10px;">Nova vida às embalagens</h3>
           <p style="font-size:15.5px; line-height:1.55; color:oklch(0.4 0.012 75); margin:0;">Muita coisa que sairia como descarte ganha uso de novo — menos desperdício, mais economia pra você.</p>
         </div>
@@ -179,7 +190,7 @@
   <!-- CONTATO -->
   <section id="contato" style="padding:90px 40px; max-width:1200px; margin:0 auto;">
     <div style="margin-bottom:48px;">
-      <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.6 0.15 45); margin-bottom:10px;">Contato</div>
+      <div style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:oklch(0.6 0.15 145); margin-bottom:10px;">Contato</div>
       <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:42px; margin:0; letter-spacing:0.3px;">Fale com a gente</h2>
     </div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
@@ -194,13 +205,18 @@
         </div>
         <div>
           <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:oklch(0.5 0.01 75); margin-bottom:6px;">Instagram</div>
-          <a href="https://instagram.com/sacariabaldo" target="_blank" style="font-size:17px; color:oklch(0.6 0.15 45); text-decoration:none; font-weight:600;">@sacariabaldo</a>
+          <a href="https://instagram.com/sacariabaldo" target="_blank" style="font-size:17px; color:oklch(0.6 0.15 145); text-decoration:none; font-weight:600;">@sacariabaldo</a>
         </div>
         <div>
           <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:oklch(0.5 0.01 75); margin-bottom:6px;">WhatsApp</div>
-          <a href="https://wa.me/5551999812392" target="_blank" style="font-size:17px; color:oklch(0.6 0.15 45); text-decoration:none; font-weight:600;">(51) 99981-2392</a>
+          <a href="https://wa.me/5551999812392" target="_blank" style="font-size:17px; color:oklch(0.6 0.15 145); text-decoration:none; font-weight:600;">(51) 99981-2392</a>
         </div>
-        <a href="https://wa.me/5551999812392" target="_blank" style="align-self:flex-start; margin-top:8px; background:oklch(0.6 0.15 45); color:oklch(0.99 0.005 75); text-decoration:none; font-weight:700; font-size:16px; padding:15px 28px; border-radius:4px;">Fale pelo WhatsApp — (51) 99981-2392</a>
+        <div>
+          <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:oklch(0.5 0.01 75); margin-bottom:6px;">Canal do WhatsApp</div>
+          <a href="https://whatsapp.com/channel/0029Vb8zhuRHltYD1mke5R17" target="_blank" style="font-size:17px; color:oklch(0.6 0.15 145); text-decoration:none; font-weight:600;">Entrar no canal</a>
+        </div>
+        <a href="https://wa.me/5551999812392" target="_blank" style="align-self:flex-start; margin-top:8px; background:oklch(0.6 0.15 145); color:oklch(0.99 0.005 75); text-decoration:none; font-weight:700; font-size:16px; padding:15px 28px; border-radius:4px;">Fale pelo WhatsApp — (51) 99981-2392</a>
+        <a href="https://whatsapp.com/channel/0029Vb8zhuRHltYD1mke5R17" target="_blank" style="align-self:flex-start; border:1.5px solid oklch(0.6 0.15 145); color:oklch(0.5 0.13 145); text-decoration:none; font-weight:700; font-size:16px; padding:15px 28px; border-radius:4px;">Entrar no canal do WhatsApp</a>
       </div>
       <div style="border-radius:10px; overflow:hidden; border:1px solid oklch(0.89 0.008 75); aspect-ratio:4/3;">
         <iframe title="Localização Sacaria Baldo" style="width:100%; height:100%; border:0;" loading="lazy" src="https://www.google.com/maps?q=Rua+Comendador+Tavares+285+Navegantes+Porto+Alegre+RS&output=embed"></iframe>
@@ -212,8 +228,34 @@
   <footer style="padding:36px 40px; background:oklch(0.22 0.015 75); color:oklch(0.75 0.01 75); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
     <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:oklch(0.95 0.005 75);">SACARIA BALDO</div>
     <div style="font-size:14px;">Navegantes · Porto Alegre · RS</div>
-    <a href="https://wa.me/5551999812392" target="_blank" style="font-size:14px; color:oklch(0.7 0.13 45); text-decoration:none; font-weight:600;">wa.me/5551999812392</a>
+    <a href="https://wa.me/5551999812392" target="_blank" style="font-size:14px; color:oklch(0.7 0.13 145); text-decoration:none; font-weight:600;">wa.me/5551999812392</a>
   </footer>
+
+  <script>
+    (function () {
+      var ids = ["hero", "produtos", "diferenciais", "contato"];
+      var dots = {};
+      ids.forEach(function (id) {
+        dots[id] = document.querySelector('.navdot[data-nav="' + id + '"]');
+      });
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              ids.forEach(function (id) {
+                if (dots[id]) dots[id].classList.toggle("active", id === entry.target.id);
+              });
+            }
+          });
+        },
+        { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+      );
+      ids.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    })();
+  </script>
 
 </body>
 </html>
